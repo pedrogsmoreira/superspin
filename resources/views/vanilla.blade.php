@@ -12,6 +12,9 @@
         @endif
     </head>
     <body class="px-3 font-sans text-black">
-        @include('sections.header')
+        @include("sections.header")
+        @include("sections.hero")
+        @include("sections.coaches")
+        @include("sections.footer")
     </body>
 </html>

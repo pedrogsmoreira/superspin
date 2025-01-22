@@ -116,9 +116,7 @@ class CoachControllerTest extends TestCase
         );
 
         // Assert: Check the order of hourly rates in ascending order
-        $responseAsc
-            ->assertStatus(200)
-            ->assertSeeInOrder([50, 75, 100]);
+        $responseAsc->assertStatus(200)->assertSeeInOrder([50, 75, 100]);
 
         // Act: Sort by hourly rate descending
         $responseDesc = $this->getJson(
@@ -126,9 +124,7 @@ class CoachControllerTest extends TestCase
         );
 
         // Assert: Check the order of hourly rates in descending order
-        $responseDesc
-            ->assertStatus(200)
-            ->assertSeeInOrder([100, 75, 50]);
+        $responseDesc->assertStatus(200)->assertSeeInOrder([100, 75, 50]);
 
         // Act: Provide an invalid sort parameter
         $responseInvalid = $this->getJson(
