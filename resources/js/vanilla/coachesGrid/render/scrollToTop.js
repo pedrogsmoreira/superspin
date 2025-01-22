@@ -5,6 +5,6 @@ gsap.registerPlugin(ScrollToPlugin);
 export function scrollToTop() {
     gsap.to(window, {
         duration: 0.5,
-        scrollTo: { y: "#coaches-grid", offsetY: 100 },
+        scrollTo: { y: "#coaches-grid", offsetY: 90 },
     });
 }
