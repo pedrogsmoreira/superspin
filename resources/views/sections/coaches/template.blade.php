@@ -1,4 +1,8 @@
-<div class="coach-item hidden w-full flex-col" id="coach-template">
+<div
+    id="coach-template"
+    class="coach-item hidden w-full flex-col"
+    id="coach-template"
+>
     <div
         class="relative w-full rounded-xl bg-gradient-to-t from-red to-red-light pb-[100%]"
     >

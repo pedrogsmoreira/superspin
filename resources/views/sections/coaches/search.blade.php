@@ -1,5 +1,6 @@
 <div class="relative lg:w-full">
     <input
+        id="coaches-search"
         type="text"
         name="search"
         class="h-8 w-full rounded-xl border border-black px-2 text-sm outline-none outline-1 outline-offset-0 hover:border-red-light hover:outline hover:outline-red-light focus:border-red focus:outline focus:outline-red active:border-red-dark active:outline active:outline-red-dark"

@@ -8,7 +8,7 @@
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path("build/manifest.json")) || file_exists(public_path("hot")))
-            @vite(["resources/css/app.css", "resources/js/vanillaApp.js"])
+            @vite(["resources/css/app.css", "resources/js/vanilla/app.js"])
         @endif
     </head>
     <body class="px-3 font-sans text-black">
