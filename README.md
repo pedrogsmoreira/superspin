@@ -6,28 +6,28 @@
    `git clone https://github.com/pedrogsmoreira/superspin.git`
 
 2. **Navigate to the project directory**  
-   cd superspin
+   `cd superspin`
 
 3. **Rename .env.example to .env**  
-   cp .env.example .env
+   `cp .env.example .env`
 
 4. **Install PHP dependencies**  
-   composer install
+   `composer install`
 
 5. **Install JavaScript dependencies**  
-   npm install
+   `npm install`
 
 6. **Build frontend assets**  
-   npm run dev
+   `npm run dev`
 
 7. **Start Docker containers with Sail**  
-   ./vendor/bin/sail up
+   `./vendor/bin/sail up`
 
 8. **Run database migrations**  
-   ./vendor/bin/sail artisan migrate:refresh
+   `./vendor/bin/sail artisan migrate:refresh`
 
 9. **Seed the database**  
-   ./vendor/bin/sail artisan db:seed
+   `./vendor/bin/sail artisan db:seed`
 
 The application should now be running. Access it at:
 
