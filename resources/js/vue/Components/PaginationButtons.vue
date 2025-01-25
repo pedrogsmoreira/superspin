@@ -18,7 +18,9 @@
             class="flex items-center justify-end xl:order-1 xl:w-1/2 xl:pr-[0.375rem]"
         >
             <p class="text-xs uppercase">
-                Page {{ currentPage }} of {{ totalPages }}
+                <span class="hidden sm:inline">Page</span>
+                {{ currentPage }} of
+                {{ totalPages }}
             </p>
         </div>
         <div class="flex gap-2 xl:order-2 xl:flex-grow xl:justify-end">

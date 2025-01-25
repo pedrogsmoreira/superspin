@@ -23,7 +23,6 @@ export default function coachItemsAnimation(trigger) {
             scrollTrigger: {
                 id: "coachItemsAnimation",
                 trigger: trigger,
-                markers: true,
             },
         },
     );

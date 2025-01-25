@@ -44,7 +44,7 @@ export async function fetchCoaches(page = 1, query = "", sort = "default") {
  * Initializes the coaches grid, including search, sort, and pagination handlers.
  * Fetches the initial data and sets up event listeners for user interactions.
  */
-export function initCoachesGrid(breakpoint) {
+export function initCoachesGrid() {
     // Create objects to track the current search query and sort option
     const searchQuery = { value: "" }; // Holds the current search query value
     const sortOption = { value: "default" }; // Holds the current sort option value

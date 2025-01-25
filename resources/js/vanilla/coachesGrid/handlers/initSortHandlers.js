@@ -1,6 +1,6 @@
 import { fetchCoaches } from "..";
 import { toggleSort } from "../render/toggleSortSelect";
-import scrollToElementAnimation from "../../../animations/scrollToElementAnimation";
+import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
 
 /**
  * Initializes sort handlers for sorting coach data.
@@ -39,7 +39,7 @@ export function initSortHandlers(searchQuery, sortOption) {
                 ).textContent = event.currentTarget.textContent;
 
                 // Scroll to the top of the section after selecting a new sort option
-                scrollToElementAnimation("#coaches-grid");
+                scrollToTopAnimation();
             });
         });
 

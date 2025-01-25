@@ -7,7 +7,7 @@
  */
 
 import { fetchCoaches } from "..";
-import scrollToElementAnimation from "../../../animations/scrollToElementAnimation";
+import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
 
 export function initPaginationHandlers(searchQuery, sortOption) {
     // Select all pagination buttons and attach click event listeners
@@ -30,7 +30,7 @@ export function initPaginationHandlers(searchQuery, sortOption) {
                 fetchCoaches(page, searchQuery.value, sortOption.value);
 
                 // Scroll to the top of the section
-                scrollToElementAnimation("#coaches-grid");
+                scrollToTopAnimation();
             });
         });
 }

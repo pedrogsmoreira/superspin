@@ -1,5 +1,5 @@
 import { fetchCoaches } from "..";
-import scrollToElementAnimation from "../../../animations/scrollToElementAnimation";
+import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
 
 /**
  * Initializes the "Clear Search" button handler.
@@ -26,6 +26,6 @@ export function initClearSearchHandler(searchQuery, sortOption) {
         fetchCoaches(1, searchQuery.value, sortOption.value);
 
         // Scroll to the top of the coaches section
-        scrollToElementAnimation("#coaches-grid");
+        scrollToTopAnimation();
     });
 }

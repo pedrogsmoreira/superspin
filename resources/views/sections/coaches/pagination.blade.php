@@ -4,11 +4,10 @@
         @include("includes.button", ["type" => "prev"])
     </div>
     <div
-        coaches-pagination-indicator
         class="flex items-center justify-end xl:order-1 xl:w-1/2 xl:pr-[0.375rem]"
     >
         <p class="text-xs uppercase">
-            Page
+            <span class="hidden sm:inline">Page</span>
             <span class="page-current"></span>
             of
             <span class="page-total"></span>

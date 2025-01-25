@@ -1,37 +1,25 @@
 <template>
-    <header ref="header" class="sticky top-0 z-40 mt-8 w-full bg-white py-2">
-        <div class="container relative mx-auto">
-            <div ref="headerLogo" class="logo flex h-8 items-center md:h-12">
-                <Super class="h-full" />
-                <Icon class="icon h-[120%]" />
-                <Spin class="h-full" />
-            </div>
-            <div class="invisible absolute -top-2 left-8 flex gap-2 py-1">
-                <h3
-                    ref="headerTitle"
-                    class="text-2xl font-bold tracking-tighter"
-                >
-                    Our Coaches
-                </h3>
+    <header class="sticky top-0 z-40">
+        <div class="w-full bg-white py-2">
+            <div class="container relative mx-auto flex justify-between">
+                <div class="flex h-6 items-center">
+                    <Icon class="icon h-[120%]" />
+                    <h3 class="pl-2 text-2xl font-bold tracking-tighter">
+                        Our Coaches
+                    </h3>
+                </div>
             </div>
         </div>
+        <hr class="-mx-3 h-px w-screen bg-black" />
     </header>
 </template>
-<script setup>
-import { ref, defineExpose } from "vue";
-import Super from "./SVG/Super.vue";
+
+<script>
 import Icon from "./SVG/Icon.vue";
-import Spin from "./SVG/Spin.vue";
 
-// Define refs
-const header = ref(null);
-const headerLogo = ref(null);
-const headerTitle = ref(null);
-
-// Expose refs
-defineExpose({
-    header,
-    headerLogo,
-    headerTitle,
-});
+export default {
+    components: {
+        Icon,
+    },
+};
 </script>
