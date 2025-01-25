@@ -27,14 +27,20 @@ export default {
         return {
             localSearchQuery: this.searchQuery,
             debounceTimeout: null,
+            isTyping: false, // Flag to track if the user has started typing
         };
     },
     watch: {
-        localSearchQuery: {
-            immediate: true,
-            handler(newValue) {
+        localSearchQuery(newValue) {
+            if (!this.isTyping) {
+                // Set the flag to true when the user starts typing
+                this.isTyping = true;
+            }
+
+            if (this.isTyping) {
+                // Apply debounce only after the user starts typing
                 this.debounce(() => this.emitSearch(newValue), 300);
-            },
+            }
         },
     },
     methods: {

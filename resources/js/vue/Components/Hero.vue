@@ -1,5 +1,6 @@
 <template>
     <section
+        ref="mainHero"
         class="container mx-auto flex h-[calc(100vh-64px-32px)] flex-col pb-8 pt-8"
     >
         <div
@@ -10,6 +11,7 @@
             ></div>
             <Ball classList="absolute top-1/4 z-20 h-24 w-24" />
             <div
+                ref="ballShadow"
                 class="absolute bottom-[calc(25%-70px)] z-10 h-6 w-24 rounded-[100%] bg-black"
             ></div>
             <div class="z-10 col-span-8 p-10 md:col-span-3">
@@ -31,12 +33,18 @@
         </div>
     </section>
 </template>
-<script>
+
+<script setup>
+import { ref, defineExpose } from "vue";
 import Ball from "./SVG/Ball.vue";
 
-export default {
-    components: {
-        Ball,
-    },
-};
+// Define refs
+const mainHero = ref(null);
+const ballShadow = ref(null);
+
+// Expose refs
+defineExpose({
+    mainHero,
+    ballShadow,
+});
 </script>

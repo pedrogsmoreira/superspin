@@ -16,7 +16,7 @@ import Icon from "./SVG/Icon.vue";
 
 export default {
     components: {
-        Icon
+        Icon,
     },
 };
 </script>

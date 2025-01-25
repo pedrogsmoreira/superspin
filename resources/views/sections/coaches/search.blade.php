@@ -10,7 +10,7 @@
         class="group absolute right-0 top-0 flex h-8 w-8 items-center justify-center outline-none"
     >
         <x-fas-search
-            class="h-4 text-black group-hover:text-red-light group-focus:text-red group-active:text-red-dark"
+            class="h-3 text-black group-hover:text-red-light group-focus:text-red group-active:text-red-dark"
         />
     </button>
 </div>

@@ -22,7 +22,7 @@ export function animateCoachesGrid() {
             ease: "sine.out",
             duration: 0.5,
             scrollTrigger: {
-                trigger: "#coaches-grid-nav",
+                trigger: "#coaches-grid",
                 //markers: true,
             },
         },

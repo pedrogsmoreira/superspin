@@ -1,16 +1,19 @@
 import { initCoachesGrid } from "./coachesGrid";
-import { initHeaderScrollAnimations } from "./header";
-import { initHeroAnimation } from "./hero";
+import { updateAnimations } from "./animations";
+import getCurrentBreakpoint from "./../utils/getCurrentBreakpoint";
 
 function initApp() {
+    const breakpoint = getCurrentBreakpoint(); // Get Tailwind breakpoint
+
     // Initialize the coaches grid
-    initCoachesGrid();
+    initCoachesGrid(breakpoint);
 
-    // Initialize the ball animation in the hero
-    initHeroAnimation();
+    // Initialize the animations ball animation in the hero
+    updateAnimations(breakpoint);
 
-    // Initialize the scroll animations in the header
-    initHeaderScrollAnimations();
+    // Attach a debounced resize listener
+    /*const debouncedUpdate = debounce(updateAnimations, 200);
+    window.addEventListener("resize", debouncedUpdate);*/
 }
 
 initApp();

@@ -2,10 +2,19 @@ import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 gsap.registerPlugin(MotionPathPlugin);
 
-export function initHeroAnimation() {
-    const container = document.querySelector("#main-hero");
-    const ball = document.querySelector("#ball");
-    const shadow = document.querySelector("#ball-shadow");
+export default function heroAnimation(container, shadow, tl) {
+    let ball;
+    if (typeof container === "string") {
+        ball = document.querySelector(`${container} svg`);
+        container = document.querySelector(container);
+    } else {
+        ball = container.querySelector("svg");
+    }
+
+    // Kill existing timeline if it exists
+    if (tl) {
+        tl.kill();
+    }
 
     // Set ball and shadow size relative to the container
     const containerWidth = container.offsetWidth;
@@ -13,7 +22,7 @@ export function initHeroAnimation() {
 
     gsap.set(ball, {
         x: -containerWidth / 4,
-        y: containerHeight / 2,
+        y: containerHeight + containerHeight / 6,
         xPercent: -50, // Ensure the center of the ball is used
         yPercent: -50,
     });
@@ -45,8 +54,29 @@ export function initHeroAnimation() {
         ],
     ];
 
+    const diagonalPaths = [
+        [
+            {
+                x: -containerWidth / 4,
+                y: containerHeight + containerHeight / 6,
+            },
+            { x: containerWidth / 8, y: (containerHeight / 6) * 2 },
+            { x: containerWidth / 4, y: (containerHeight / 4) * 3 },
+        ],
+        [
+            { x: containerWidth / 4, y: (containerHeight / 4) * 3 },
+            { x: (containerWidth / 8) * 5, y: containerHeight / 6 },
+            { x: (containerWidth / 4) * 3, y: containerHeight / 4 },
+        ],
+        [
+            { x: (containerWidth / 4) * 3, y: containerHeight / 4 },
+            { x: containerWidth + containerWidth / 8, y: -containerHeight / 6 },
+            { x: containerWidth + containerWidth / 4, y: -containerHeight / 4 },
+        ],
+    ];
+
     // Create the timeline
-    const tl = gsap.timeline({
+    tl = gsap.timeline({
         repeat: -1, // Loop forever
         yoyo: true, // Reverse animation
         onUpdate: updateShadow, // Synchronize shadow animation

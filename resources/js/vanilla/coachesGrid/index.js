@@ -2,7 +2,7 @@ import { fetchCoachesData } from "../../api";
 import { renderCoaches } from "./render/renderCoaches";
 import { renderPagination } from "./render/renderPagination";
 import { renderCoachesNotFound } from "./render/renderCoachesNotFound";
-import { animateCoachesGrid } from "./render/animateCoachesGrid";
+import coachItemsAnimation from "../../animations/coachItemsAnimation";
 
 import { initPaginationHandlers } from "./handlers/initPaginationHandlers";
 import { initSearchHandler } from "./handlers/initSearchHandler";
@@ -28,7 +28,7 @@ export async function fetchCoaches(page = 1, query = "", sort = "default") {
         if (data.total > 0) {
             // Render the list of coaches if there are results
             renderCoaches(data.data);
-            animateCoachesGrid(); // Add animations to the grid after rendering
+            coachItemsAnimation("#coaches-grid"); // Add animations to the grid after rendering
         } else {
             // Render a "not found" message if there are no results
             renderCoachesNotFound();
@@ -44,7 +44,7 @@ export async function fetchCoaches(page = 1, query = "", sort = "default") {
  * Initializes the coaches grid, including search, sort, and pagination handlers.
  * Fetches the initial data and sets up event listeners for user interactions.
  */
-export function initCoachesGrid() {
+export function initCoachesGrid(breakpoint) {
     // Create objects to track the current search query and sort option
     const searchQuery = { value: "" }; // Holds the current search query value
     const sortOption = { value: "default" }; // Holds the current sort option value

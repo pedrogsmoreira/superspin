@@ -1,5 +1,5 @@
 import { fetchCoaches } from "..";
-import { scrollToTop } from "../render/scrollToTop";
+import scrollToElementAnimation from "../../../animations/scrollToElementAnimation";
 
 /**
  * Initializes a search handler for the search input field.
@@ -30,6 +30,6 @@ export function initSearchHandler(searchQuery, sortOption) {
         }, 300); // Delay the search action by 300 milliseconds
 
         // Scroll to the top of the section after the input event
-        scrollToTop();
+        scrollToElementAnimation("#coaches-grid");
     });
 }

@@ -14,7 +14,7 @@
             class="relative z-20 flex h-8 w-full items-center rounded-xl border border-black bg-white px-2 text-left text-sm outline-offset-0 hover:border-red-light hover:outline hover:outline-red-light focus:border-red focus:outline focus:outline-red active:border-red-dark active:outline active:outline-red-dark"
         >
             <span>{{ $sortOptions[0]["label"] }}</span>
-            <x-fas-chevron-down class="ml-auto h-4" />
+            <x-fas-chevron-down class="ml-auto h-3" />
         </button>
         <ul
             id="coaches-sort-options"

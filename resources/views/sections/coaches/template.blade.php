@@ -1,6 +1,6 @@
 <div
     id="coach-template"
-    class="coach-item hidden w-full flex-col"
+    class="coach-card hidden w-full flex-col"
     id="coach-template"
 >
     <div

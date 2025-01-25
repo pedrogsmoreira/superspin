@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full flex-col">
+    <div class="coach-card w-full flex-col">
         <div
             class="relative w-full rounded-xl bg-gradient-to-t from-red to-red-light pb-[100%]"
         >
