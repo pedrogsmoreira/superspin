@@ -1,6 +1,6 @@
 <template>
     <div
-        class="grid min-h-[calc(100vh-202px)] xl:min-h-[calc(100vh-162px)] w-full grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:order-3"
+        class="grid min-h-[calc(100vh-202px)] w-full grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:order-3 xl:min-h-[calc(100vh-162px)]"
     >
         <CoachCard v-for="coach in coaches" :key="coach.id" :coach="coach" />
         <div

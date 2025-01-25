@@ -1,13 +1,13 @@
+import { fetchCoaches } from "..";
+import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
+
 /**
  * Initializes event handlers for pagination buttons.
  * When a button is clicked, it fetches the corresponding page of coach data.
  *
- * @param {HTMLElement} searchQuery - An input or select element containing the current search query.
- * @param {HTMLElement} sortOption - An input or select element containing the selected sort option.
+ * @param {Object} searchQuery - Object tracking the current search query value.
+ * @param {Object} sortOption - Object tracking the current sorting option value.
  */
-
-import { fetchCoaches } from "..";
-import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
 
 export function initPaginationHandlers(searchQuery, sortOption) {
     // Select all pagination buttons and attach click event listeners
@@ -15,6 +15,8 @@ export function initPaginationHandlers(searchQuery, sortOption) {
         .querySelectorAll("#coaches-pagination button")
         .forEach((button) => {
             button.addEventListener("click", (event) => {
+                console.log(typeof searchQuery, typeof sortOption);
+
                 // If the clicked button is disabled, do nothing
                 if (event.currentTarget.disabled) return;
 

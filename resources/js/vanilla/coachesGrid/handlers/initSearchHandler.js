@@ -6,8 +6,8 @@ import scrollToTopAnimation from "../../../animations/scrollToTopAnimation";
  * Automatically fetches and updates the coaches list when the user types in the search box,
  * using a debounce mechanism to improve performance.
  *
- * @param {HTMLElement} searchQuery - An object representing the current search query (e.g., an input or state object).
- * @param {HTMLElement} sortOption - An object representing the current sorting option (e.g., a select element).
+ * @param {Object} searchQuery - Object tracking the current search query value.
+ * @param {Object} sortOption - Object tracking the current sorting option value.
  */
 export function initSearchHandler(searchQuery, sortOption) {
     // Get the search input field element

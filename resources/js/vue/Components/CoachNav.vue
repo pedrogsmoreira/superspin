@@ -19,28 +19,36 @@ import SearchBar from "./SearchBar.vue";
 
 export default {
     components: { SortSelect, SearchBar },
+
+    // Props passed from the parent component
     props: {
-        searchQuery: String,
+        searchQuery: String,  // Holds the current search query
         clearEvent: {
             type: Boolean,
-            default: false,
+            default: false,  // Default value for clearEvent is false
         },
     },
+
     watch: {
+        // When clearEvent becomes true, clear the search bar input
         clearEvent(newValue) {
             if (newValue) {
                 this.clearSearchBar();
             }
         },
     },
+
     methods: {
         emitSearch(query) {
             this.$emit("search", query);
         },
+
         emitSort(option) {
             this.$emit("sort", option);
         },
+
         clearSearchBar() {
+            // Access the SearchBar component via ref and call clearInput method
             this.$refs.searchBar.clearInput();
         },
     },
