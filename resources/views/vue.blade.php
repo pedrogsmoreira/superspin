@@ -4,7 +4,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Laravel</title>
+        <title>Our Coaches - SuperSpin</title>
+        <link rel="icon" href="{{ asset("favicon.ico")}}" sizes="any" />
+        <link rel="icon" href="{{ asset("icon.svg")}}" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="{{ asset("apple-touch-icon.png")}}" />
+        <link rel="manifest" href="{{ asset("manifest.webmanifest")}}" />
 
         <!-- Styles / Scripts -->
         @if (file_exists(public_path("build/manifest.json")) || file_exists(public_path("hot")))
